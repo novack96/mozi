@@ -1,0 +1,61 @@
+/* A tartalmazó doboz  fomrázása */
+.custom-container {
+display: block;
+position: relative;
+padding-left: 35px;
+margin-bottom: 12px;
+cursor: pointer;
+font-size: 22px;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+
+/* az eredeti gomb "elrejtése" */
+.custom-container input {
+position: absolute;
+opacity: 0;
+}
+
+/* alapértelmezett saját gomb */
+.checkmark {
+position: absolute;
+top: 0;
+left: 0;
+height: 25px;
+width: 25px;
+background-color: inherit;
+border-radius: 50%;
+border-width: 1px;
+border-style: solid;
+border-color: rgb(150,150,150);
+}
+
+/* Egérrel lefedett gomb */
+.custom-container:hover input ~ .checkmark {
+background-color: #ccc;
+}
+
+
+/* A kijelölésjelző létérehozása */
+.checkmark:after {
+content: "";
+position: absolute;
+display: none;
+}
+
+/* Kijelölésjelző megjelnítése */
+.custom-container input:checked ~ .checkmark:after {
+display: block;
+}
+
+/* a kijelölésjelző megformázása */
+.custom-container .checkmark:after {
+top: 5px;
+left: 5px;
+width: 13px;
+height: 13px;
+border-radius: 50%;
+background: gray;
+}
